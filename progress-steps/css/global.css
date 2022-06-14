@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Tai+Heritage+Pro:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+:root, 
+::after,
+::before  {
+    --step-width: 50px;
+    --color-primary: rgb(38, 123, 192);
+    --color-secondary: rgb(202, 188, 188);
+
+}
+html {
+    font-family: 'Tai Heritage Pro', serif;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: var(--color-secondary);
+    cursor: not-allowed;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.progress-steps__steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.progress-steps__step {
+    width: var(--step-width);
+    height: var(--step-width);
+    border: 3px solid var(--color-secondary);
+    border-radius: 50%;
+    text-align: center;
+    line-height: var(--step-width);
+    position: relative;
+    transition: border-color .5s ease-in .3s;
+}
+
+.progress-steps__step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: calc(var(--step-width) - 3px);
+    top: calc(var(--step-width) / 2 - 4px);
+    width: 80px;
+    height: 4px;
+    background-color:  var(--color-secondary);
+    transition: background-color .5s ease-in;
+}
+
+.progress-steps__step.done:not(:last-child)::after {
+    background-color:  var(--color-primary);
+
+}
+
+.progress-steps__step.active {
+    border-color: var(--color-primary);
+}
+
+.progress-steps__step.done {
+    border-color: var(--color-primary);
+}
+
+.progress-steps__step:not(:last-child) {
+    margin-right: 80px;
+}
+
+.progress-steps__actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.progress-steps__actions > *:not(:last-child) {
+    margin-right: 20px;
+}
