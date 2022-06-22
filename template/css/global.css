@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Tai+Heritage+Pro:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+:root, 
+::after,
+::before  {
+    --color-primary: rgb(38, 123, 192);
+    --color-secondary: rgb(202, 188, 188);
+
+}
+html {
+    font-family: 'Tai Heritage Pro', serif;
+}
+
+.container {
+    width: 90vw;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

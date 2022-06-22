@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Tai+Heritage+Pro:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+:root, 
+::after,
+::before  {
+    --color-primary: rgb(85, 199, 128);
+    --color-secondary: rgb(202, 188, 188);
+
+}
+html {
+    font-family: 'Tai Heritage Pro', serif;
+}
+
+.container {
+    width: 90vw;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search {
+    position: relative;
+}
+
+.search__input {
+    border-color: var(--color-primary);
+    border-width: 1px;
+    border-style: dashed;
+    outline: none;
+    transition: border-color 1s;
+    width: 50px;
+    height: 50px;
+    transition: width .7s ease-in;
+    caret-color: var(--color-primary);
+}
+
+.search.active .search__input {
+    width: 230px;
+    padding: 0 15px;
+}
+
+.search__input:focus {
+    border-style:solid;
+}
+
+.search__btn {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    transition: transform .7s ease-in;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search.active  .search__btn {
+    transform: translateX(180px);
+}
+
+.search__icon {
+    color: var(--color-primary);
+}
