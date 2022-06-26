@@ -97,3 +97,27 @@ svg path {
 .video-player:not(.paused) .play-icon {
     display: none;
 }
+
+.video-player.full-screen .full-icon {
+    display: none;
+}
+
+.video-player:not(.full-screen) .full-alt-icon {
+    display: none;
+}
+
+.video-player.mini-player .in-icon {
+    display: none;
+}
+
+.video-player:not(.mini-player) .out-icon {
+    display: none;
+}
+
+.video-player.theater .code-icon{
+    display: none;
+}
+
+.video-player:not(.theater) .remote-icon {
+    display: none;
+}
