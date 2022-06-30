@@ -49,6 +49,8 @@ html {
     z-index: 100;
     opacity: 0;
     transition: opacity 150ms ease-in-out;
+    display: flex;
+    align-items: center;
 
 }
 
@@ -86,10 +88,6 @@ html {
     opacity: 1;
 }
 
-svg path {
-    fill: #fff;
-}
-
 .video-player.paused .pause-icon {
     display: none;
 }
@@ -120,4 +118,39 @@ svg path {
 
 .video-player:not(.theater) .remote-icon {
     display: none;
+}
+
+.volume-high,
+.volume-low,
+.volume-mute {
+    display: none;
+}
+
+.video-player[data-volume-level="high"] .volume-high {
+    display: block;
+}
+
+.video-player[data-volume-level="low"] .volume-low {
+    display: block;
+}
+
+.video-player[data-volume-level="mute"] .volume-mute {
+    display: block;
+}
+
+.volume__slider {
+    width: 0;
+    transition: width 150ms ease-in-out, transform 150ms ease-in-out;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.volume:hover .volume__slider,
+.volume:focus-within .volume__slider {
+    width: 100px;
+    transform: scaleX(1);
+}
+
+.hide-cursor {
+    cursor: none;
 }
